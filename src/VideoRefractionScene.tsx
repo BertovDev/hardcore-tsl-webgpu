@@ -33,8 +33,8 @@ function DraggableLens({
         position={initialPosition}
         // transform
         style={{
-          width: size[0] * 455 + "px",
-          height: size[1] * 455 + "px",
+          width: size[0] * 424 + "px",
+          height: size[1] * 424 + "px",
           pointerEvents: "none",
           transform: "translate(-50%, -50%)",
           zIndex: -1000,

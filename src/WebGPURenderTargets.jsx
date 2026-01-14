@@ -11,14 +11,11 @@ import {
 } from "three/tsl";
 import { bloom } from "three/addons/tsl/display/BloomNode.js";
 import { motionBlur } from "three/addons/tsl/display/MotionBlur.js";
-import { smaa } from "three/addons/tsl/display/SMAANode.js";
 import { useThree, useFrame, extend } from "@react-three/fiber";
 import { useEffect, useRef } from "react";
 import { useVideoTexture } from "@react-three/drei";
 import { MeshBasicNodeMaterial } from "three/webgpu";
-import { useMemo } from "react";
 import { Fn } from "three/src/nodes/TSL.js";
-import { useEffectEvent } from "react";
 
 extend({ MeshBasicNodeMaterial });
 
@@ -27,7 +24,6 @@ export function WebGPURenderTargets({
   bloomRadius = 0.1,
   bloomThreshold = 0,
   motionBlurAmount = 1,
-  enableSmaa = true,
   enableMotionBlur = false,
 }) {
   const { gl: renderer, scene, camera, size } = useThree();
@@ -97,7 +93,6 @@ export function WebGPURenderTargets({
     bloomRadius,
     bloomThreshold,
     motionBlurAmount,
-    enableSmaa,
     enableMotionBlur,
   ]);
 
